@@ -8,11 +8,11 @@ import model.Subject;
 
 import java.util.Scanner;
 
-public class CheckMark  {
+public class MarkCheckView {
     private WDController wdController;
     private Scanner in;
 
-    public CheckMark(WDController wdController, Scanner in) {
+    public MarkCheckView(WDController wdController, Scanner in) {
         this.wdController = wdController;
         this.in = in;
     }
@@ -24,7 +24,7 @@ public class CheckMark  {
         Subject subject=this.wdController.getWD().getSubjectByName(subjectname);
         Student student=this.wdController.getWD().getStudentByNick(this.wdController.getLoggedUser().getNick());
         if(this.wdController.getWD().printMarks(student, subject)){
-            System.out.println("Wypisano");
+            System.out.println("To Twoje wszystkie oceny");
         }
         else {
             System.out.println("Nie posiadasz ocen z tego przedmiotu");

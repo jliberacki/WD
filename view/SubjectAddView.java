@@ -8,11 +8,11 @@ import model.Teacher;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class AddSubject {
+public class SubjectAddView {
     private WDController wdController;
     private Scanner in;
 
-    public AddSubject(WDController wdController, Scanner in) {
+    public SubjectAddView(WDController wdController, Scanner in) {
         this.wdController = wdController;
         this.in = in;
     }

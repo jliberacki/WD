@@ -4,11 +4,11 @@ import controller.SecurityController;
 
 import java.util.Scanner;
 
-public class RegisterNewTeacher {
+public class NewTeacherRegisterView {
     private SecurityController securityController;
     private Scanner in;
 
-    public RegisterNewTeacher(SecurityController securityController, Scanner in) {
+    public NewTeacherRegisterView(SecurityController securityController, Scanner in) {
         this.securityController = securityController;
         this.in = in;
     }

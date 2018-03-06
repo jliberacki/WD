@@ -2,22 +2,23 @@ package view;
 
 import controller.WDController;
 import exception.InvalidDataExcepetion;
+import exception.WrongValueException;
 import model.Mark;
 import model.Student;
 import model.Subject;
 
 import java.util.Scanner;
 
-public class AddMark {
+public class MarkAddView {
     private WDController wdController;
     private Scanner in;
 
-    public AddMark(WDController wdController, Scanner in) {
+    public MarkAddView(WDController wdController, Scanner in) {
         this.wdController = wdController;
         this.in = in;
     }
 
-    public void addMark() throws InvalidDataExcepetion {
+    public void addMark() throws InvalidDataExcepetion, WrongValueException {
         String studentID;
         String subjectname;
         String date;

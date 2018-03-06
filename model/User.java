@@ -6,6 +6,7 @@ public class User implements Serializable {
     protected String password;
 
 
+
     public User(String nick, String password) {
         this.nick = nick;
         this.password = password;
@@ -25,12 +26,36 @@ public class User implements Serializable {
         return true;
     }
 
-    public Boolean isItAdmin() {
-        return this instanceof Admin;
+    public static Boolean isItAdmin(User user) {
+        return user instanceof Admin;
     }
 
-    public Boolean isItStudent() {return this instanceof Student;}
+    public static Boolean isItStudent(User user) {
+        return user instanceof Student;
+    }
 
-    public Boolean isItTeacher() {return this instanceof Teacher;}
+    public static Boolean isItTeacher(User user) {
+        return user instanceof Teacher;
+    }
+
+    public enum UserTypes {
+        ADMIN, STUDENT, TEACHER
+    }
+
+    public static UserTypes UserType(User user){
+        if(isItAdmin(user)){
+            return UserTypes.ADMIN;
+        }
+        else if (isItStudent(user)){
+            return UserTypes.STUDENT;
+        }
+        else if(isItTeacher(user)){
+            return UserTypes.TEACHER;
+        }
+        else return null;
+    }
+
+
+
 
 }

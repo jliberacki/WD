@@ -1,5 +1,6 @@
 package model;
 import java.io.Serializable;
+import exception.WrongValueException;
 
 public class Mark implements Serializable{
 
@@ -11,13 +12,9 @@ public class Mark implements Serializable{
     private Subject subject;
 
 
-    public Mark(float value, Student student, Subject subject, String date, String description) {
-        if (value > 5.0 || value <2.0 || value%0.5!=0.0){
-            System.out.println("Ocena musi byc z przedialu 2.0-5.0 oraz byc wielokrotnoscia 0.5");
-        }
-        else {
-            this.value=value;
-        }
+    public Mark(float value, Student student, Subject subject, String date, String description) throws WrongValueException {
+        if (value > 5.0 || value <2.0 || value%0.5!=0.0) throw new WrongValueException();
+        else this.value=value;
         this.student = student;
         this.subject = subject;
         this.date = date;
@@ -35,6 +32,9 @@ public class Mark implements Serializable{
         return this.subject;
     }
 
+    public float getValue() {
+        return this.value;
+    }
 
     public String toString() {
         return this.value+" - "+this.description+", "+this.date;

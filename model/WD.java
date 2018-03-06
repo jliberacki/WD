@@ -27,6 +27,7 @@ public class WD implements Serializable{
         for (Student student : students) {
             if (student.getNick().equals(nick)) return false;
         }
+        if (nick.equals("admin")) return false;
         return true;
 
     }
@@ -115,16 +116,22 @@ public class WD implements Serializable{
 
     public boolean printMarks(Student student, Subject subject){
         boolean hasMarks=false;
+        int counterOfMarks=0;
+        float sumOfMarks=0;
         LinkedList<Mark> marks;
         marks = student.getMarksList();
         for(Mark mark : marks){
             if(mark.getSubject().equals(subject)){
                 hasMarks=true;
                 System.out.println(mark);
+                sumOfMarks+=mark.getValue();
+                counterOfMarks++;
             }
         }
+        if(hasMarks) System.out.println("Twoja srednia ocen z tego przedmiotu to: "+sumOfMarks/(float)counterOfMarks);
         return hasMarks;
     }
+
 
 
 

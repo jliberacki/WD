@@ -6,7 +6,7 @@ public class Student extends User {
     private String firstname;
     private String lastname;
     private String studentID;
-    private String contact;
+
 
     private LinkedList<Mark> marks;
 
@@ -23,17 +23,13 @@ public class Student extends User {
         return this.studentID;
     }
 
-    public String getContact() {
-        return this.contact;
-    }
 
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
 
     public boolean getMark(Mark mark){
         return this.marks.add(mark);
     }
+
+
 
     public LinkedList<Mark> getMarksList() {
         return this.marks;

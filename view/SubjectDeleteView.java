@@ -7,11 +7,11 @@ import model.Subject;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class DeleteSubjectView {
+public class SubjectDeleteView {
     private WDController wdController;
     private Scanner in;
 
-    public DeleteSubjectView(WDController wdController, Scanner in) {
+    public SubjectDeleteView(WDController wdController, Scanner in) {
         this.wdController = wdController;
         this.in = in;
     }
@@ -24,8 +24,8 @@ public class DeleteSubjectView {
                 System.out.println("Naciśnij " + i  +", aby usunąć przedmiot o nazwie: " + subject.getName());
                 i++;
             }
-            System.out.println("Naciśnij B, aby się cofnąć!");
-            System.out.println("Naciśnij Q, aby wyjść!");
+            System.out.println("Naciśnij b, aby się cofnąć!");
+            System.out.println("Naciśnij q, aby wyjść!");
 
             String inputChar;
             int numberOfSubject;
@@ -33,9 +33,9 @@ public class DeleteSubjectView {
             try {
 
                 inputChar = in.nextLine();
-                if (inputChar.equals("Q") || inputChar.equals("q")) {
+                if (inputChar.equals("q")) {
                     return false;
-                } else if (inputChar.equals("B") || inputChar.equals("b")) {
+                } else if (inputChar.equals("b")) {
                     return true;
                 }  else {
                     numberOfSubject = Integer.parseInt(inputChar);

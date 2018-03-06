@@ -4,7 +4,6 @@ import java.io.Serializable;
 public class Teacher extends User {
         private String firstname;
         private String lastname;
-        private String contact;
 
         public Teacher (String nick, String password, String firstname, String lastname) {
             super(nick, password);
@@ -20,13 +19,6 @@ public class Teacher extends User {
             return this.lastname;
         }
 
-        public String getContact() {
-            return this.contact;
-        }
-
-        public void setContact(String contact){
-            this.contact=contact;
-        }
 
 
 

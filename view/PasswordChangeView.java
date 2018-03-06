@@ -5,11 +5,11 @@ import exception.*;
 
 import java.util.Scanner;
 
-public class ChangePassword {
+public class PasswordChangeView {
     private SecurityController securityController;
     private Scanner in;
 
-    public ChangePassword(SecurityController securityController, Scanner in) {
+    public PasswordChangeView(SecurityController securityController, Scanner in) {
         this.securityController = securityController;
         this.in = in;
     }

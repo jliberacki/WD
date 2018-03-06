@@ -14,7 +14,8 @@ public class StorageController {
             return wd;
 
         } catch (Exception e) {
-            return null;
+            WD wd = new WD();
+            return wd;
         }
     }
 
